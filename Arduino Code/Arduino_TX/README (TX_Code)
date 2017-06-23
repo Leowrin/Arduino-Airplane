@@ -1,0 +1,4 @@
+Arduino Tx Code.
+Waited Changes :
+§(//C); replace "A2" with "A1"
+add 35ms delay between every info packet.
