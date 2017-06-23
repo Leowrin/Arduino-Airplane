@@ -40,7 +40,7 @@ Serial.print(LeftA);
 
 Serial.print("\t");
 //C
-int righta = map(analogRead(A2),0,1023,0,99);
+int righta = map(analogRead(A1),0,1023,0,99);
 RightA = String("C:");
 RightA = String(RightA+righta);
 Serial.print(RightA);
