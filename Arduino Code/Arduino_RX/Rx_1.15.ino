@@ -6,7 +6,11 @@ String entryA;
 String entryB;
 
 byte Pitch;
-byte Roll;
+byte RightA;
+byte LeftA;
+byte Yaw;
+byte RESC;
+byte LESC;
 
 
 void setup() {
@@ -27,10 +31,17 @@ if (comserial.available()>1){
     Pitch=entryB;
   }
   else if (entryA=="B:") {
-    Roll=entryB;
+    RightA=entryB;
   }
-  else if (entryA=="C:") {
-    Yaw=entryB;
+/*  else if (entryA=="C:") {
+    RollC=entryB;
+  }*/
+  else if (entryA=="D:") {
+    /* code */
   }
 
+
+
+
 }
+//* to delete.
