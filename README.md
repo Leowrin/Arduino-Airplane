@@ -1,12 +1,14 @@
 # Drone
 Arduino based Drone.
 
+
 Code Rules :
+
 
 If a variable starts upper case, it's defined at the beginning of the code and is recurrent.
 
-Letters corresponds to specific data :
 
+Letters corresponds to specific data :
 * A - Pitch.
 * B - LeftA, or Left Aileron.
 * C - RightA, or Right Aileron.
