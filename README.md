@@ -1,12 +1,7 @@
 # Drone
 Arduino based Drone.
 
-
-Code Rules :
-
-
-If a variable starts upper case, it's defined at the beginning of the code and is recurrent.
-
+Diagrams & schematics to come.
 
 Letters corresponds to specific data :
 * A - Pitch.
@@ -19,6 +14,8 @@ Letters corresponds to specific data :
 
 Tx is the remote control Arduino.
 Rx is the controlled Arduino, or basically the airplane.
+
+If a variable starts upper case, it's defined at the beginning of the code and is recurrent.
 
 
 * HC-12 Com. Folder : Files useful for HC-12 module Communication.
