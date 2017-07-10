@@ -33,13 +33,18 @@ if (comserial.available()>1){
   else if (entryA=="B:") {
     RightA=entryB;
   }
-/*  else if (entryA=="C:") {
+/*else if (entryA=="C:") {
     RollC=entryB;
   }*/
   else if (entryA=="D:") {
-    /* code */
+    Yaw=entryB;
   }
-
+  else if (entryA=="E:") {
+    RESC=entryB;
+  }
+  else if (entryA=="F:") {
+    LESC=entryB;
+  }
 
 
 
