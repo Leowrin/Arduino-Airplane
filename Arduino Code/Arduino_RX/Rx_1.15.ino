@@ -1,6 +1,5 @@
-#include <SoftwareSerial.h>         
 #include <Servo.h>
-SoftwareSerial comserial(2,3);      
+  
 
 //Déclaration des servos.
 Servo SPitch;
@@ -26,10 +25,7 @@ byte LESC;
 void setup() {
   
 Serial.begin(9600);
-Serial.setTimeout(30);
-
-comserial.begin(9600);      
-comserial.setTimeout(30);   
+Serial.setTimeout(30);  
 
 //servo.attach
 SPitch.attach(3);
