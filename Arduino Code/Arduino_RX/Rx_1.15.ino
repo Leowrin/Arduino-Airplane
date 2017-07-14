@@ -1,5 +1,5 @@
 #include <Servo.h>
-  
+
 
 //Déclaration des servos.
 Servo SPitch;
@@ -23,9 +23,9 @@ byte LESC;
 
 
 void setup() {
-  
+//Serial
 Serial.begin(9600);
-Serial.setTimeout(30);  
+Serial.setTimeout(30);
 
 //servo.attach
 SPitch.attach(3);
@@ -34,20 +34,19 @@ SLeftA.attach(10);
 SYaw.attach(11);
 SRESC.attach(5);
 SLESC.attach(6);
-
 }
 
+
 void loop() {
-if (comserial.available()>1){
-  
+if (Serial.available()>1){
   entry = comserial.readString();
   entryA = entry.substring(0,2);
   entryB = entry.substring(2,4);
-  
+  entryB = entryB.toInt();
 }
-  
+
 switch(entryA){
-      
+
     case == "A:":
         Pitch=entryB;
     break;
@@ -57,7 +56,7 @@ switch(entryA){
     break;
 
     case == "C:":
-        RollC=entryB;
+        LeftA=entryB;
     break;
 
     case == "D:":
@@ -73,10 +72,10 @@ switch(entryA){
     break;
 }
 
-  
+
 
 Pitch=map(Pitch,0,99,x,x);
 RESC=map(RESC,0,99,16,130);
 LESC=map(LESC,0,99,16,130);
-  
+
 }
