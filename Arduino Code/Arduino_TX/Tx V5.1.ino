@@ -13,6 +13,8 @@ Serial.begin(9600);
 
 
 void loop() {
+  data = String("");
+
   //A
   pitch = analogRead(A0);
   if (pitch < 10) {
