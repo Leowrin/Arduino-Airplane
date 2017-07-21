@@ -26,10 +26,7 @@ void loop() {
       else if (pitch < 1000) {
         data = String("0");
       }
-
   data = String(data+pitch);
-
-
 
   //B
   lefta = analogRead(A1);
@@ -42,7 +39,6 @@ void loop() {
       else if (lefta < 1000) {
         data = String(data+"0");
       }
-
   data = String(data+lefta);
 
   //C
@@ -58,7 +54,6 @@ void loop() {
       else if (yaw < 1000) {
         data = String(data+"0");
       }
-
   data = String(data+yaw);
 
   //E
@@ -72,7 +67,6 @@ void loop() {
       else if (rightm < 1000) {
         data = String(data+"0");
       }
-
   data = String(data+rightm );
 
   //F
@@ -86,7 +80,6 @@ void loop() {
       else if (leftm < 1000) {
         data = String(data+"0");
       }
-
   data = String(data+leftm);
 
   Serial.print(data);
