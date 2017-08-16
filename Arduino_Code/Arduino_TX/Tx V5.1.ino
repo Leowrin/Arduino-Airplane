@@ -2,8 +2,8 @@ int pitch;
 int lefta;
 int righta;
 int yaw;
-int rightm;
-int leftm;
+int lesc;
+int resc;
 
 String data;
 
@@ -57,30 +57,30 @@ void loop() {
   data = String(data+yaw);
 
   //E
-  rightm = analogRead(A6);
-  if (rightm < 10) {
+  lesc = analogRead(A6);
+  if (lesc < 10) {
     data = String(data+"000");
   }
-    else if (rightm < 100) {
+    else if (lesc < 100) {
     data = String(data+"00");
     }
-      else if (rightm < 1000) {
+      else if (lesc < 1000) {
         data = String(data+"0");
       }
-  data = String(data+rightm );
+  data = String(data+lesc);
 
   //F
-  leftm = analogRead(A7);
-  if (leftm < 10) {
+  resc = analogRead(A7);
+  if (resc < 10) {
     data = String(data+"000");
   }
-    else if (leftm < 100) {
+    else if (resc < 100) {
     data = String(data+"00");
     }
-      else if (leftm < 1000) {
+      else if (resc < 1000) {
         data = String(data+"0");
       }
-  data = String(data+leftm);
+  data = String(data+resc);
 
   Serial.print(data);
 

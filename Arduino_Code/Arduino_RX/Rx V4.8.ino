@@ -6,8 +6,8 @@ Servo SPitch;
 Servo SRightA;
 Servo SLeftA;
 Servo SYaw;
-Servo SRESC;
 Servo SLESC;
+Servo SRESC;
 
 //Variables
 String entry;
@@ -17,8 +17,8 @@ int Pitch;
 int RightA;
 int LeftA;
 int Yaw;
-int RESC;
 int LESC;
+int RESC;
 
 
 void setup() {
@@ -31,8 +31,8 @@ SPitch.attach(3);
 SRightA.attach(9);
 SLeftA.attach(10);
 SYaw.attach(11);
-SRESC.attach(5);
-SLESC.attach(6);
+SLESC.attach(5);
+SRESC.attach(6);
 }
 
 
@@ -50,30 +50,30 @@ if (Serial.available()>1){
   Yaw = entryA.toInt();
 
   entryA = entry.substring(12,16);
-  RESC = entryA.toInt();
+  LESC = entryA.toInt();
 
   entryA = entry.substring(16,20);
-  LESC = entryA.toInt();
+  RESC = entryA.toInt();
 }
 
 Pitch=map(Pitch,0,1023,0,0);
 LeftA=map(LeftA,0,1023,0,0);
 RightA=map(LeftA,0,1023,0,0);
 Yaw=map(Yaw,0,1023,0,0);
-RESC=map(RESC,0,1023,0,0);
 LESC=map(LESC,0,1023,0,0);
+RESC=map(RESC,0,1023,0,0);
 
 SPitch.write(Pitch);
-delay(5);
+
 SLeftA.write(LeftA);
-delay(5);
+
 SRightA.write(RightA);
-delay(5);
+
 SYaw.write(Yaw);
-delay(5);
-SRESC.write(RESC);
-delay(5);
-SLESC.write(LESC);
+
+SLESC.write(RESC);
+
+SRESC.write(LESC);
 
 
 }
