@@ -4,6 +4,11 @@ int righta;
 int yaw;
 int lesc;
 int resc;
+int lspeed;
+int rspeed;
+int speed;
+float avgspeed;
+long avgc;
 
 String data;
 
@@ -69,6 +74,7 @@ void loop() {
 
 //E+
 if (lesc < analogRead(A3)){
+  lspeed = lesc;
   if (lesc < 10) {
     data = String(data+"000");
   }
@@ -81,6 +87,7 @@ if (lesc < analogRead(A3)){
   data = String(data+lesc);
 }
 else {
+  lspeed = analogRead(A3);
   if (analogRead(A3) < 10) {
     data = String(data+"000");
   }
@@ -100,6 +107,7 @@ else {
 
   //F+
 if (resc < analogRead(A3)){
+  rspeed = resc;
   if (resc < 10) {
     data = String(data+"000");
   }
@@ -112,6 +120,7 @@ if (resc < analogRead(A3)){
   data = String(data+resc);
 }
 else{
+  rspeed = analogRead(A3);
   if (analogRead(A3) < 10) {
     data = String(data+"000");
   }
@@ -124,7 +133,17 @@ else{
   data = String(data+analogRead(A3));
 }
 
+speed = lspeed + rspeed;
+speed = speed/2;
+speed = map(speed, 0, 1023, 0, 100);
+
+avgspeed = avgspeed + speed;
+avgc = avgc + 1;
+
+
+
   Serial.print(data);
+  //Serial.print (avgspeed);
 
   delay (50);
 
