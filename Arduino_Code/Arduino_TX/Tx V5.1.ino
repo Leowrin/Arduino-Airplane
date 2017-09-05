@@ -7,8 +7,10 @@ int resc;
 int lspeed;
 int rspeed;
 int speed;
-float avgspeed;
+long speedsum;
 long avgc;
+byte avgspeed;
+
 
 String data;
 
@@ -133,12 +135,9 @@ else{
   data = String(data+analogRead(A3));
 }
 
-speed = lspeed + rspeed;
-speed = speed/2;
-speed = map(speed, 0, 1023, 0, 100);
-
-avgspeed = avgspeed + speed;
+speedsum = speedsum + ((lspeed + rspeed)/2);
 avgc = avgc + 1;
+avgspeed = speedsum/avgc;
 
 
 
