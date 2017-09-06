@@ -7,6 +7,6 @@ The transciever we used is the <a href="https://github.com/Leowrin/Drone/tree/ma
 
 The airplane is controlled with 4 metal-geared (~0.0134[kg] each) servos. 
 
-The raw analog data from the joystick, speed potentiometers, yaw buttons, are each sent to the airplane in a single raw every ~0.05[s] following a spesific <a href="">pattern</a> shown in the wiki.
+The raw analog data from the joystick, speed potentiometers, yaw buttons, are each sent to the airplane in a single raw every ~0.05[s] following a spesific <a href="https://github.com/Leowrin/Drone/blob/master/Arduino_Code/Arduino_TX/Data%20pattern.jpg">pattern</a> shown in the wiki.
 
 Raw data is then processed on the airplane. 
