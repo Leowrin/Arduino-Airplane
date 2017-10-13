@@ -1,7 +1,7 @@
 #include <Servo.h>
 //bite
 
-//Déclaration des servos.
+//Déclaration des servos juteux.
 Servo SPitch;
 Servo SRightA;
 Servo SLeftA;
