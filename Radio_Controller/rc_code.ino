@@ -14,6 +14,7 @@ String data;
 void setup() {
   Serial.begin(bps);
   Serial.setTimeout(8);
+  delay(2000);
 }
 
 
