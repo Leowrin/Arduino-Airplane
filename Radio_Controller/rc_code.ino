@@ -1,5 +1,6 @@
 #define bps 2400
 
+boolean comstate;
 int pitch;
 int lefta;
 int righta;
@@ -7,7 +8,11 @@ int yaw;
 int lesc;
 int resc;
 int besc;
+long timeA;
+long timeB;
 
+
+String entry;
 String data;
 
 
@@ -20,6 +25,9 @@ void setup() {
 
 void loop() {
 data="";
+entry="";
+timeA=0;
+timeB=0;
 
 //pitch, A
 pitch = analogRead(A0);
@@ -90,6 +98,36 @@ if (resc < 10) {
   data = String(data+resc);
 }
 
+
+
+
 Serial.print(data);
-delay(200);
+
+
+//delay(200); //replaced with next lines
+timeA = millis();
+while(Serial.available()<=1){
+  timeB = millis();
+  if ((timeB-timeA)>150){
+    break;
+  }
+}if (Serial.available()>1){
+  entry = Serial.readString();
+  comstate=true;
+  //data process, soon batterie voltage display
+  timeA = millis();
+  timeB = 0;
+  while((timeB-timeA)<100){
+    timeB = millis();
+  }
+}else{
+  comstate=false;
+  //data process, soon alarm ?
+  timeA = millis();
+  timeB = 0;
+  while((timeB-timeA)<50){
+    timeB = millis();
+  }
+}
+
 }
