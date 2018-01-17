@@ -10,6 +10,7 @@ Servo SLESC;
 Servo SRESC;
 
 //Variables
+boolean comstate;
 int Pitch;
 int RightA;
 int LeftA;
