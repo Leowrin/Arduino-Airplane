@@ -55,6 +55,7 @@ while(Serial.available()<=1){
   if ((timeB-timeA)>120){
     break;
   }
+  //reduction de code, enlever le if
 }if (Serial.available()>1){
    entry = Serial.readString();
 
