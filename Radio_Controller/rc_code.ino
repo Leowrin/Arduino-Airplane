@@ -5,11 +5,11 @@ int pitch;
 int lefta;
 int righta;
 int yaw;
-int lesc;
-int resc;
 int besc;
 long timeA;
 long timeB;
+float lescm;
+float rescm;
 
 
 String entry;
@@ -66,6 +66,13 @@ if (digitalRead(4)==HIGH){
   data=String(data+"0512");
 }
 
+lescm = map(analoRead(A6),0,1023,0,1);
+rescm = map(anaolgRead(A7),0,1023,0,1);
+
+lescm = // A TERMINER!!!!!!!!!!!
+  
+  
+/*
 //Both ESCs
 besc = analogRead(A3);
 //left ESC
@@ -96,7 +103,7 @@ if (resc < 10) {
   data = String(data+"0"+resc);
 } else {
   data = String(data+resc);
-}
+}*/
 
 
 
