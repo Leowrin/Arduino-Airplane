@@ -100,7 +100,7 @@ data = "123";
 
 timeB = 0;
 timeA = millis();
-while((timeB-timeA)<100){
+while((timeB-timeA)<90){
   timeB = millis();
 }
 Serial.print(data);
