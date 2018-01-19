@@ -5,7 +5,8 @@ int pitch;
 int lefta;
 int righta;
 int yaw;
-int besc;
+int lesc;
+int resc;
 long timeA;
 long timeB;
 float lescm;
@@ -69,7 +70,8 @@ if (digitalRead(4)==HIGH){
 lescm = map(analoRead(A6),0,1023,0,1);
 rescm = map(anaolgRead(A7),0,1023,0,1);
 
-lescm = // A TERMINER!!!!!!!!!!!
+lesc = lescm*analogRead(A3); // A TERMINER!!!!!!!!!!!
+resc = resm*analogRead(A3);
   
   
 /*
