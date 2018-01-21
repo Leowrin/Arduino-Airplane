@@ -72,8 +72,26 @@ rescm = map(anaolgRead(A7),0,1023,0,1);
 
 lesc = lescm*analogRead(A3); // A TERMINER!!!!!!!!!!!
 resc = resm*analogRead(A3);
-  
-  
+
+if (lesc < 10) {
+  data = String(data+"000"+lesc);
+} else if (lesc < 100) {
+  data = String(data+"00"+lesc);
+} else if (lesc < 1000) {
+  data = String(data+"0"+lesc);
+} else {
+  data = String(data+lesc);
+}
+
+if (resc < 10) {
+  data = String(data+"000"+resc);
+} else if (resc < 100) {
+  data = String(data+"00"+resc);
+} else if (resc < 1000) {
+  data = String(data+"0"+resc);
+} else {
+  data = String(data+resc);
+}
 /*
 //Both ESCs
 besc = analogRead(A3);
