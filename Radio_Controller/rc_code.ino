@@ -67,11 +67,11 @@ if (digitalRead(4)==HIGH){
   data=String(data+"0512");
 }
 
-lescm = map(analoRead(A6),0,1023,0,1);
-rescm = map(anaolgRead(A7),0,1023,0,1);
+lescm = map(analogRead(A6),0,1023,0,1);
+rescm = map(analogRead(A7),0,1023,0,1);
 
 lesc = lescm*analogRead(A3); // A TERMINER!!!!!!!!!!!
-resc = resm*analogRead(A3);
+resc = rescm*analogRead(A3);
 
 if (lesc < 10) {
   data = String(data+"000"+lesc);
