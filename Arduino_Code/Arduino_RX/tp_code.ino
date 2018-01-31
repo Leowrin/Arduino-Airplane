@@ -1,4 +1,5 @@
 #include <Servo.h>
+#define bps 2400
 //bite
 
 //Déclaration des servos juteux.
@@ -29,7 +30,7 @@ String data;
 
 void setup() {
 //Serial
-Serial.begin(9600);
+Serial.begin(bps);
 Serial.setTimeout(45);
 
 //servo.attach
