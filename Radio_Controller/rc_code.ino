@@ -29,6 +29,7 @@ data="";
 entry="";
 timeA=0;
 timeB=0;
+timeC=0;
 
 //pitch, A
 pitch = analogRead(A0);
@@ -67,8 +68,8 @@ if (digitalRead(4)==HIGH){
   data=String(data+"0512");
 }
 
-lescm = map(analogRead(A6),0,1023,0,1);
-rescm = map(analogRead(A7),0,1023,0,1);
+lescm = analogRead(A6)/1023;
+rescm = analogRead(A7)/1023;
 
 lesc = lescm*analogRead(A3); // A TERMINER!!!!!!!!!!!
 resc = rescm*analogRead(A3);
@@ -92,69 +93,47 @@ if (resc < 10) {
 } else {
   data = String(data+resc);
 }
-/*
-//Both ESCs
-besc = analogRead(A3);
-//left ESC
-lesc = analogRead(A6);
-if (besc < lesc){
-  lesc = besc;
-}
-if (lesc < 10) {
-  data = String(data+"000"+lesc);
-} else if (lesc < 100) {
-  data = String(data+"00"+lesc);
-} else if (lesc < 1000) {
-  data = String(data+"0"+lesc);
-} else {
-  data = String(data+lesc);
-}
-
-//right ESC
-resc = analogRead(A7);
-if (besc < resc){
-  resc = besc;
-}
-if (resc < 10) {
-  data = String(data+"000"+resc);
-} else if (resc < 100) {
-  data = String(data+"00"+resc);
-} else if (resc < 1000) {
-  data = String(data+"0"+resc);
-} else {
-  data = String(data+resc);
-}*/
-
-
-
 
 Serial.print(data);
+
+
+
 
 
 //delay(200); //replaced with next lines
 timeA = millis();
 while(Serial.available()<=1){
   timeB = millis();
-  if ((timeB-timeA)>150){
+  timeC = timeB-timeA;
+  if (timeC>150){
     break;
-  }
+  }timeC=0;
 }if (Serial.available()>1){
   entry = Serial.readString();
   comstate=true;
   //data process, soon batterie voltage display
   timeA = millis();
   timeB = 0;
-  while((timeB-timeA)<100){
+  while(timeC<100){
     timeB = millis();
+    timeC = timeB-timeA;
   }
 }else{
   comstate=false;
   //data process, soon alarm ?
   timeA = millis();
   timeB = 0;
-  while((timeB-timeA)<50){
+  while(timeC<100){
     timeB = millis();
+    timeC = timeB-timeA;
   }
 }
-
+switch (comstate) {
+  case 1:
+  digitalWrite(7,HIGH);
+  break;
+  case 0:
+  digitalWrite(7,LOW);
+  break;
+}
 }

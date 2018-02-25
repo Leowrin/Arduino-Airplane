@@ -45,7 +45,7 @@ SRESC.attach(6);
 
 void loop() {
 //var reset
-entry="05120512051208000800";
+entry="05120512051200000000";
 timeA = 0;
 timeB = 0;
 
@@ -53,9 +53,10 @@ timeB = 0;
 timeA = millis();
 while(Serial.available()<=1){
   timeB = millis();
-  if ((timeB-timeA)>120){
+  timeC = timeB-timeA;
+  if (timeC>120){
     break;
-  }
+  }timeC = 0;
   //reduction de code, enlever le if
 }if (Serial.available()>1){
    entry = Serial.readString();
@@ -101,8 +102,9 @@ data = "123";
 
 timeB = 0;
 timeA = millis();
-while((timeB-timeA)<90){
+while(timeC < 90){
   timeB = millis();
+  timeC = timeB-timeA;
 }
 Serial.print(data);
 
