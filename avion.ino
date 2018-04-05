@@ -40,17 +40,16 @@ SYaw.attach(11);
 SLESC.attach(5);
 SRESC.attach(6);
 
+
 }
 
-
 void loop() {
-//var reset
-data="05120512051200000000";
-
-
+  //var set
+  data="05120512051200000000";
 
 
 if (Serial.available()>0){
+
    data = Serial.readString();
 
    entryA = data.substring(0,4);
@@ -68,25 +67,24 @@ if (Serial.available()>0){
    entryA = data.substring(16,20);
    RESC = entryA.toInt();
  }
-Pitch=map(Pitch,0,1023,0,0);
-LeftA=map(LeftA,0,1023,0,0);
-RightA=map(LeftA,0,1023,0,0);
-Yaw=map(Yaw,0,1023,0,0);
-LESC=map(LESC,0,1023,0,0);
-RESC=map(RESC,0,1023,0,0);
 
-SPitch.write(Pitch);
+ Pitch=map(Pitch,0,1023,0,1023);
+ LeftA=map(LeftA,0,1023,0,1023);
+ RightA=map(LeftA,0,1023,0,1023);
+ Yaw=map(Yaw,0,1023,0,1023);
+ LESC=map(LESC,0,1023,0,0);
+ RESC=map(RESC,0,1023,0,0);
 
-SLeftA.write(LeftA);
+ SPitch.write(Pitch);
 
-SRightA.write(RightA);
+ SLeftA.write(LeftA);
 
-SYaw.write(Yaw);
+ SRightA.write(RightA);
 
-SLESC.write(RESC);
+ SYaw.write(Yaw);
 
-SRESC.write(LESC);
+ SLESC.write(RESC);
 
-
-
+ SRESC.write(LESC);
+ 
 }
