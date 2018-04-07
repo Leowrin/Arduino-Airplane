@@ -19,7 +19,7 @@ String data;
 void setup() {
 
   Serial.begin(2400);     //2400 [baud/sec] pour une meilleure portée
-  Serial.setTimeout(8);
+  Serial.setTimeout(40);
   delay(2000);          //attente du condo
 
 }
@@ -72,9 +72,10 @@ if (digitalRead(4)==HIGH){
 }
 
 //moteurs
-lescm = analogRead(A6)/1023;  //A6 pot gauche
-rescm = analogRead(A7)/1023;  //A7 pot droite
-
+lescm = analogRead(A6);  //A6 pot gauche
+rescm = analogRead(A7);  //A7 pot droite
+lescm=lescm/1023;
+rescm=rescm/1023;
 lesc = lescm*analogRead(A3);
 resc = rescm*analogRead(A3);
 
