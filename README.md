@@ -1,7 +1,7 @@
-# Drone
-We created an arduino based rc airplane.
+# Arduino based radio-controlled airplane
+We created an arduino based rc-airplane.
 
-We used two arduino nano v.3 to make the radio control, which is 3D-printed, and the airplane is made of foam.
+We used an arduino nano v.3 to make the radio controller, which is 3D-printed, and the airplane is made of polystyrene.
 
 The transciever we used is the <a href="https://github.com/Leowrin/Drone/tree/master/HC-12%20-Com." target="_blank">HC-12</a> module board. The radio frequency is 433Mhz and has a range between ~100[m] to ~1800[m] depending on the environment.
 
