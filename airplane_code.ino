@@ -44,8 +44,6 @@ SRESC.attach(6);
 }
 
 void loop() {
-  //var set
-  data="05120512051200000000";
 
 
 if (Serial.available()>0){
@@ -66,25 +64,29 @@ if (Serial.available()>0){
 
    entryA = data.substring(16,20);
    RESC = entryA.toInt();
- }
 
- Pitch=map(Pitch,0,1023,0,1023);
- LeftA=map(LeftA,0,1023,0,1023);
- RightA=map(LeftA,0,1023,0,1023);
- Yaw=map(Yaw,0,1023,0,1023);
- LESC=map(LESC,0,1023,0,0);
- RESC=map(RESC,0,1023,0,0);
 
- SPitch.write(Pitch);
 
- SLeftA.write(LeftA);
+   Pitch=map(Pitch,0,1023,0,180);
+   LeftA=map(LeftA,0,1023,0,180);
+   RightA=map(LeftA,0,1023,0,180);
+   Yaw=map(Yaw,0,1023,0,180);
+   LESC=map(LESC,0,1023,40,180);
+   RESC=map(RESC,0,1023,40,180);
 
- SRightA.write(RightA);
-
- SYaw.write(Yaw);
-
- SLESC.write(RESC);
-
- SRESC.write(LESC);
  
+
+   SPitch.write(Pitch);
+
+   SLeftA.write(LeftA);
+
+   SRightA.write(RightA);
+
+   SYaw.write(Yaw);
+
+   SLESC.write(RESC);
+
+   SRESC.write(LESC);
+
+ }
 }
