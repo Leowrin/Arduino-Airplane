@@ -7,7 +7,7 @@ The transciever we used is the <a href="https://github.com/Leowrin/Arduino-Airpl
 
 The airplane is controlled with 4 metal-geared servos, 1 for each aileron, 1 for the elevator and 1 for the yaw axis.
 
-The analog value from the joystick, speed potentiometers, yaw buttons, are each sent to the airplane in a single raw every ~0.05[s] following a spesific <a href="https://github.com/Leowrin/Arduino-Airplane/blob/master/Radio_Controller/Data%20pattern.jpg" target="_blank">pattern</a> shown in the wiki.
+The analog value from the joystick, speed potentiometers, yaw buttons, are each sent to the airplane in a single raw every ~0.05[s] following a specific <a href="https://github.com/Leowrin/Arduino-Airplane/blob/master/Radio_Controller/Data%20pattern.jpg" target="_blank">pattern</a> shown in the wiki.
 
 Raw data is then processed by the airplane.
 
