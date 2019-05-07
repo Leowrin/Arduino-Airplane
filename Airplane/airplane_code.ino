@@ -74,7 +74,7 @@ if (Serial.available()>0){
    LESC=map(LESC,0,1023,40,180);
    RESC=map(RESC,0,1023,40,180);
 
- 
+
 
    SPitch.write(Pitch);
 
