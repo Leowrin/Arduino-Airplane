@@ -15,4 +15,4 @@ speed potentiometer's value are mapped from [0;1023] to [40;180]. The new low va
 
 Maneuverability potentiometers are mapped from [0;1023] to [0;180], which corresponds to the standard servo motor opening angle.
 
-http://airfoiltools.com/site/search?cx=partner-pub-2601928470036827%3A5136476429&cof=FORID%3A10&ie=UTF-8&q=elevator&sa=Search&siteurl=www.airfoiltools.com%2F&ref=www.ecosia.org%2F&ss=1216j326132j7
+http://airfoiltools.com
