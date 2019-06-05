@@ -14,3 +14,5 @@ Raw data is then processed by the airplane.
 speed potentiometer's value are mapped from [0;1023] to [40;180]. The new low value shall vary between each ESCs.
 
 Maneuverability potentiometers are mapped from [0;1023] to [0;180], which corresponds to the standard servo motor opening angle.
+
+http://airfoiltools.com
